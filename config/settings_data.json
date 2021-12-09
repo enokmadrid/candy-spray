@@ -11,7 +11,7 @@
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
     "sold_out_badge_color_scheme": "inverse",
-    "page_width": "1200",
+    "page_width": "1600",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
