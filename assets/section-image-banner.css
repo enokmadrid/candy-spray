@@ -331,7 +331,7 @@
 
 @media screen and (min-width: 1400px) {
   .banner__box {
-    max-width: 90rem;
+    max-width: 87rem;
   }
 }
 
@@ -375,4 +375,46 @@
 
 .banner__box > * + .banner__buttons {
   margin-top: 2rem;
+}
+
+
+/* CUSTOM */
+
+.banner__content {
+  flex-wrap: wrap;
+}
+.candy-avatar {
+  align-self: end;
+  overflow: hidden;
+  width: 40%;
+  margin: 0 auto;
+}
+.candy-avatar img {
+  margin-bottom: -60px;
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 749px) {
+  .banner__content {
+    flex-wrap: nowrap;
+  }
+  .candy-avatar {
+    width: 75%;
+  }
+
+  .candy-avatar img {
+    margin-bottom: -50px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .banner__content {
+    flex-wrap: nowrap;
+  }
+  .candy-avatar {
+    width: 60%;
+  }
+
+  .candy-avatar img {
+    margin-bottom: -130px;
+  }
 }
