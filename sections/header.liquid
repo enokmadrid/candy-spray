@@ -83,6 +83,36 @@
       width: 315px;
       height: 113px;
     }
+
+    .header__inline-menu > ul {
+      height: 100% !important;
+    }
+    .header__menu-item {
+      padding: 0 1rem;
+      line-height: 113px;
+    }
+    .header__menu-item span {
+      padding: 0 2rem;
+      height: 100% !important;
+    }
+
+    .header__menu-item:hover span {
+      text-decoration: unset;
+    }
+
+    .header__active-menu-item {
+      color: rgb(var(--color-base-accent-1));
+      text-decoration: unset;
+      background-image: url('https://cdn.shopify.com/s/files/1/0602/7984/9199/files/nav-splatter.svg?v=1639095338');
+      background-repeat: no-repeat;
+      background-position-x: center;
+      text-shadow: 0px 0px 25px rgb(var(--color-base-accent-1));
+      font-weight: 600;
+    }
+
+    .header__menu-item:hover .header__active-menu-item {
+      /* text-decoration-thickness: 0.2rem; */
+    }
   }
 </style>
 
