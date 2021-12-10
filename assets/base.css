@@ -1247,7 +1247,7 @@ deferred-media {
   transition: box-shadow var(--duration-default) ease;
 }
 
-.button:not(.button--secondary)::after {
+.button:not(.button--secondary):not(.button--tertiary)::after {
   content: "";
   position: absolute;
   background-image: url('https://cdn.shopify.com/s/files/1/0602/7984/9199/files/nav-splatter.svg?v=1639095338');
