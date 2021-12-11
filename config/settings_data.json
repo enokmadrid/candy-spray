@@ -8,8 +8,8 @@
     "colors_outline_button_labels": "#f826de",
     "colors_background_1": "#191324",
     "colors_background_2": "#f3f3f3",
-    "type_header_font": "assistant_n4",
-    "type_body_font": "assistant_n4",
+    "type_header_font": "open_sans_n4",
+    "type_body_font": "open_sans_n4",
     "sold_out_badge_color_scheme": "inverse",
     "page_width": "1600",
     "sections": {
