@@ -177,6 +177,8 @@
 
 .card-information__wrapper > .price {
   color: rgb(var(--color-foreground));
+  font-weight: 700;
+  font-size: larger;
 }
 
 .card-information__wrapper > .rating {

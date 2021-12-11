@@ -370,7 +370,7 @@ h5,
 .h3,
 .h4,
 .h5 {
-  font-family: var(--font-heading-family);
+  font-family: 'Urgh', var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
@@ -379,48 +379,48 @@ h5,
 }
 
 .h0 {
-  font-size: calc(var(--font-heading-scale) * 4rem);
+  font-size: calc(var(--font-heading-scale) * 6rem);
 }
 
 @media only screen and (min-width: 750px) {
   .h0 {
-    font-size: calc(var(--font-heading-scale) * 5.2rem);
+    font-size: calc(var(--font-heading-scale) * 7.8rem);
   }
 }
 
 h1,
 .h1 {
-  font-size: calc(var(--font-heading-scale) * 3rem);
+  font-size: calc(var(--font-heading-scale) * 5rem);
 }
 
 @media only screen and (min-width: 750px) {
   h1,
   .h1 {
-    font-size: calc(var(--font-heading-scale) * 4rem);
+    font-size: calc(var(--font-heading-scale) * 6rem);
   }
 }
 
 h2,
 .h2 {
-  font-size: calc(var(--font-heading-scale) * 2rem);
+  font-size: calc(var(--font-heading-scale) * 4rem);
 }
 
 @media only screen and (min-width: 750px) {
   h2,
   .h2 {
-    font-size: calc(var(--font-heading-scale) * 2.4rem);
+    font-size: calc(var(--font-heading-scale) * 5rem);
   }
 }
 
 h3,
 .h3 {
-  font-size: calc(var(--font-heading-scale) * 1.7rem);
+  font-size: calc(var(--font-heading-scale) * 3.7rem);
 }
 
 @media only screen and (min-width: 750px) {
   h3,
   .h3 {
-    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    font-size: calc(var(--font-heading-scale) * 3.8rem);
   }
 }
 
@@ -1257,15 +1257,24 @@ deferred-media {
   transition: box-shadow var(--duration-default) ease;
 }
 
-.button:not(.button--secondary):not(.button--tertiary)::after {
+.button:not(.button--tertiary)::after {
   content: "";
   position: absolute;
   background-image: url('https://cdn.shopify.com/s/files/1/0602/7984/9199/files/nav-splatter.svg?v=1639095338');
   background-repeat: no-repeat;
   background-position-x: center;
   height: 30px;
-  width: 80px;
-  margin-top: 70px;
+  width: 15%;
+  margin-top: 50px;
+  z-index: -5;
+  transform: scale(0);
+  opacity: 0;
+  transition: all var(--duration-default) ease-in-out;
+}
+.button:not(.button--tertiary):hover::after {
+  transform: scale(1);
+  opacity: 1;
+  margin-top: 81px;
 }
 
 /* Button - other */
@@ -2228,6 +2237,8 @@ details[open] > .header__icon--menu .icon-hamburger {
   padding: 1.2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
+  font-family: 'Urgh';
+  font-size: 2rem;
 }
 
 .header__menu-item:hover {
