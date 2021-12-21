@@ -13,7 +13,7 @@
     "type_body_font": "open_sans_n4",
     "body_scale": 110,
     "sold_out_badge_color_scheme": "inverse",
-    "page_width": "1600",
+    "page_width": "1200",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
