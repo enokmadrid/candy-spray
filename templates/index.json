@@ -95,6 +95,22 @@
         "show_rating": false
       }
     },
+    "1640118569574fd035": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "We Airbrush on These Popular Items",
+        "collection": "t-shirts",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
     "collage": {
       "type": "collage",
       "disabled": true,
@@ -271,6 +287,7 @@
     "image_banner",
     "rich_text",
     "featured_products",
+    "1640118569574fd035",
     "collage",
     "video",
     "multi_column",
