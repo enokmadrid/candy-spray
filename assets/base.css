@@ -12,7 +12,7 @@
   --gradient-background: var(--gradient-base-background-2);
 }
 .color-background-3 {
-  --color-background: var(--color-base-background-gray);
+  background-color: rgb(var(--color-base-background-gray));
 }
 
 .color-inverse {
