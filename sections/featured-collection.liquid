@@ -16,7 +16,9 @@
     assign more_in_collection = true
   endif
 -%}
-
+{% if section.settings.has_section_edge == true %} 
+    {% render 'section-edge' %}
+{% endif %}
 <section class="color-{{ section.settings.bg_color }} flow-root">
   <div class="collection page-width{% if section.settings.swipe_on_mobile == true and section.settings.collection.all_products_count > 2 and section.settings.products_to_show > 2 %} page-width-desktop{% endif %}">
   <div class="title-wrapper-with-link{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}{% if section.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 %} title-wrapper--self-padded-tablet-down{% endif %}">
@@ -192,6 +194,26 @@
         }
       ],
       "default": "background-3"
+    },
+    {
+      "type": "header",
+      "content": "Container Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "has_section_edge",
+      "label": "Add Section Edge",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "edge_color",
+      "label": "Edge Color",
+      "default": "4B4454",
+      "options": [
+        { "value": "191324", "label": "Cinder" },
+        { "value": "4B4454", "label": "Don Juan" }
+      ]
     }
   ],
   "presets": [
