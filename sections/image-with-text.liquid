@@ -36,6 +36,7 @@
                 {{ block.settings.heading | escape }}
               </h2>
             {%- when 'text' -%}
+              <span class="subheading">{{ block.settings.subheading }}</span>
               <div class="image-with-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
             {%- when 'button' -%}
               {%- if block.settings.button_label != blank -%}
@@ -145,6 +146,12 @@
       "name": "t:sections.image-with-text.blocks.text.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "default": "Candy Spray Airbrush LLC",
+          "label": "Subheading Text"
+        },
         {
           "type": "richtext",
           "id": "text",
