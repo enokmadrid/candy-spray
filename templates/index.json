@@ -93,7 +93,7 @@
         "show_image_outline": false,
         "show_vendor": false,
         "show_rating": false,
-        "bg_color": "background-3",
+        "bg_color": "gradient-gray",
         "has_section_edge": true,
         "edge_color": "4B4454"
       }
@@ -112,9 +112,9 @@
         "show_image_outline": false,
         "show_vendor": false,
         "show_rating": false,
-        "bg_color": "background-1",
-        "has_section_edge": false,
-        "edge_color": "4B4454"
+        "bg_color": "gradient-dark",
+        "has_section_edge": true,
+        "edge_color": "191324"
       }
     },
     "collage": {
