@@ -2368,3 +2368,11 @@ details-disclosure > details {
   }
 }
 
+
+/* CUSTOM CSS */
+section#shopify-section-template--15503761277167__featured_products,
+section#shopify-section-template--15503761277167__1640118569574fd035,
+.flow-root {
+  display: flow-root;
+  margin: 0;
+}
