@@ -2383,5 +2383,5 @@ section#shopify-section-template--15503761277167__1640118569574fd035,
 
 .section-edge {
   z-index: 1;
-  bottom: -214px;
+  display: block;
 }

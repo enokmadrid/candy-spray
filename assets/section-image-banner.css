@@ -412,6 +412,7 @@
   }
   .candy-avatar {
     width: 60%;
+    margin-bottom: -30px;
   }
 
   .candy-avatar img {
