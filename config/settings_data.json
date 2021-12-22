@@ -48,32 +48,42 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "08815b38-19ed-4c7a-b5bb-8df2edda4201": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/candy-spray-airbrush-inverse-logo.png",
+              "image_width": 200,
+              "alignment": ""
+            }
+          },
+          "a3f104b0-7e19-4ec3-8e93-930d99843e82": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/candy_spray_avatar.png",
+              "image_width": 200,
+              "alignment": "center"
+            }
+          },
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
-            }
-          },
-          "footer-1": {
-            "type": "text",
-            "settings": {
-              "heading": "Heading",
-              "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+              "heading": "Quick Links",
+              "menu": "main-menu"
             }
           }
         },
         "block_order": [
-          "footer-0",
-          "footer-1"
+          "08815b38-19ed-4c7a-b5bb-8df2edda4201",
+          "a3f104b0-7e19-4ec3-8e93-930d99843e82",
+          "footer-0"
         ],
         "settings": {
           "color_scheme": "inverse",
           "newsletter_enable": false,
           "newsletter_heading": "Subscribe to our emails",
-          "show_social": false,
-          "enable_country_selector": true,
-          "enable_language_selector": true,
+          "show_social": true,
+          "enable_country_selector": false,
+          "enable_language_selector": false,
           "payment_enable": false
         }
       }
