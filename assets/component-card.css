@@ -350,20 +350,20 @@
   .collection .grid__item {
     padding-left: 2rem;
   }
-  .collection .card__inner::after {
+  .collection .card::after {
     content: "";
     width: 95%;
-    height: 81%;
+    height: 82%;
     display: inline-block;
     background-color: rgba(var(--color-base-accent-1));
     position: absolute;
-    z-index: -1;
     transform: rotate(2deg);
     top: 1.2rem;
     left: -0.5rem;
   }
 }
 
-.card.card--soft {
+.card__inner {
+  z-index: 1;
   background-color: black;
 }
