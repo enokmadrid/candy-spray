@@ -11,8 +11,14 @@
   --color-background: var(--color-base-background-2);
   --gradient-background: var(--gradient-base-background-2);
 }
-.color-background-3 {
+.color-gradient-gray {
+  background: radial-gradient(circle at bottom, rgba(176,0,157,1) -50%, rgba(75,68,84,0) 100%);
   background-color: rgb(var(--color-base-background-gray));
+}
+
+.color-gradient-dark {
+  background: radial-gradient(circle at bottom, #6B004A -50%, rgba(25,19,36,0) 100%);
+  background-color: rgb(var(--color-base-background-1));
 }
 
 .color-inverse {
