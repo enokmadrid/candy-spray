@@ -37,7 +37,6 @@ menu-drawer > details[open] > summary::before {
   top: 100%;
   width: calc(100vw - 4rem);
   padding: 0;
-  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   border-left: 0;
   background-color: rgb(var(--color-background));
   overflow-x: hidden;
@@ -113,9 +112,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__menu-item {
-  padding: 1.1rem 3.2rem;
+  padding: 1.5rem 3.2rem;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  font-family: 'Urgh';
 }
 
 .no-js .menu-drawer__menu-item {
@@ -149,6 +149,9 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__menu-item--active:hover {
   background-color: rgba(var(--color-foreground), 0.08);
+}
+.menu-drawer__menu-item--active {
+  border-left: 4px solid rgba(var(--color-base-accent-1));
 }
 
 .js .menu-drawer__menu-item .icon-caret,
