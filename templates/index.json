@@ -92,7 +92,8 @@
         "add_image_padding": false,
         "show_image_outline": false,
         "show_vendor": false,
-        "show_rating": false
+        "show_rating": false,
+        "bg_color": "background-3"
       }
     },
     "1640118569574fd035": {
@@ -103,12 +104,13 @@
         "products_to_show": 6,
         "show_view_all": true,
         "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "show_secondary_image": false,
         "add_image_padding": false,
-        "show_image_outline": true,
+        "show_image_outline": false,
         "show_vendor": false,
-        "show_rating": false
+        "show_rating": false,
+        "bg_color": "background-1"
       }
     },
     "collage": {
