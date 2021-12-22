@@ -93,7 +93,9 @@
         "show_image_outline": false,
         "show_vendor": false,
         "show_rating": false,
-        "bg_color": "background-3"
+        "bg_color": "background-3",
+        "has_section_edge": true,
+        "edge_color": "4B4454"
       }
     },
     "1640118569574fd035": {
@@ -110,7 +112,9 @@
         "show_image_outline": false,
         "show_vendor": false,
         "show_rating": false,
-        "bg_color": "background-1"
+        "bg_color": "background-1",
+        "has_section_edge": false,
+        "edge_color": "4B4454"
       }
     },
     "collage": {
