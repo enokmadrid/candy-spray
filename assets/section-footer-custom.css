@@ -1,0 +1,35 @@
+.footer-custom {
+    background: white;
+}
+.footer__content-bottom-wrapper {
+    display: grid;
+    grid-template-columns: 290px 1fr 1fr;
+    align-items: start;
+    color: rgb(var(--color-base-background-1));
+}
+.candy-spray-avatar-footer {
+    padding: 0 70px;
+}
+.caption,
+.footer__links {
+    text-align: right;
+}
+.footer__links li {
+    list-style: none;
+    display: inline-block;
+    font-family: 'Urgh';
+    font-size: 24px;
+    height: 100px;
+    line-height: 100px;
+}
+.footer__links li:not(:last-child) {
+    padding: 0 40px;
+    border-right: 1px solid;
+    border-image: linear-gradient(rgba(190, 186, 193, 0), rgba(190, 186, 193, 1), rgba(190, 186, 193, 0)) 0 100% 0;
+}
+.footer__links li:last-child {
+    padding-left: 40px;
+}
+.caption {
+    color: #7C7484;
+}
