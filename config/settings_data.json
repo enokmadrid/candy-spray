@@ -13,7 +13,7 @@
     "type_body_font": "open_sans_n4",
     "body_scale": 110,
     "sold_out_badge_color_scheme": "inverse",
-    "page_width": "1200",
+    "page_width": "1440",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -85,6 +85,29 @@
           "enable_country_selector": false,
           "enable_language_selector": false,
           "payment_enable": false
+        }
+      },
+      "footer-custom": {
+        "type": "footer-custom",
+        "blocks": {
+          "footer-custom-0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "footer-custom-0"
+        ],
+        "settings": {
+          "newsletter_enable": true,
+          "newsletter_heading": "Subscribe to our emails",
+          "show_social": false,
+          "enable_country_selector": true,
+          "enable_language_selector": true,
+          "payment_enable": true
         }
       }
     },
