@@ -1,36 +1,30 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 {{ 'section-footer-custom.css' | asset_url | stylesheet_tag }}
 
-<footer class="footer footer-custom color-{{ section.settings.color_scheme }} gradient">
+<footer class="footer footer-custom">
   <div class="footer__content-bottom">
     <div class="footer__content-bottom-wrapper page-width">
       <div>
-        {% render 'logo' %}
+        {% render 'logo-dark' %}
       </div>
       <div class="candy-spray-avatar-footer">
         <img src="https://cdn.shopify.com/s/files/1/0602/7984/9199/files/candy-spray-avatar.svg" alt="Candy Spray Avatar" width="auto">
       </div>
 
-      <div class="footer__column">
-          <ul class="footer__links">
-            <li>Designs</li>
-            <li>Cart</li>
-            <li>Contact</li>
-          </ul>
-          
-          <ul class="footer-block__details-content list-unstyled">
-            {%- for link in block.settings.menu.links -%}
-              <li>
-                <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
-                  {{ link.title }}
-                </a>
-              </li>
-            {%- endfor -%}
-          </ul>
-        
+      <div class="text-right">
+        <ul class="footer__links">
+          <li>Designs</li>
+          <li>Cart</li>
+          <li>Contact</li>
+        </ul>
+
+        <div class="social">
+          Social Links
+        </div>
 
         <div class="footer__copyright caption">
-          <small class="copyright__content">&copy; Copyright {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
+          <small class="copyright__content">&copy; Copyright {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small><br>
+          <small class="copyright__content">Site Design and Built by <a href="http://www.enokmadrid.com" target="blank">Enok Madrid</a></small>
         </div>
       </div>
 
