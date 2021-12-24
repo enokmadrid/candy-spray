@@ -40,45 +40,6 @@
         "show_text_below": true
       }
     },
-    "rich_text": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        },
-        "button": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
-      }
-    },
     "featured_products": {
       "type": "featured-collection",
       "settings": {
@@ -115,143 +76,6 @@
         "bg_color": "gradient-dark",
         "has_section_edge": true,
         "edge_color": "191324"
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "disabled": true,
-      "blocks": {
-        "video": {
-          "type": "video",
-          "settings": {
-            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "description": "Describe the video",
-            "image_padding": false
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false,
-            "image_padding": false,
-            "secondary_background": false
-          }
-        },
-        "collection": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image_padding": false,
-            "color_scheme": "background-1"
-          }
-        }
-      },
-      "block_order": [
-        "video",
-        "product",
-        "collection"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "desktop_layout": "left",
-        "mobile_layout": "collage"
-      }
-    },
-    "video": {
-      "type": "video",
-      "disabled": true,
-      "settings": {
-        "heading": "Video",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false
-      }
-    },
-    "multi_column": {
-      "type": "multicolumn",
-      "disabled": true,
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "<p> <\/p>",
-            "link_label": "T-Shirts",
-            "link": "#"
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "Hoodies",
-            "link": "#"
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "<p> <\/p>",
-            "link_label": "Onesies",
-            "link": "#"
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "We Airbrush on These Popular Items",
-        "image_width": "full",
-        "image_ratio": "portrait",
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": true
-      }
-    },
-    "1639011242564d183f": {
-      "type": "multicolumn",
-      "disabled": true,
-      "blocks": {
-        "163901124281258207-0": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "<p> <\/p>",
-            "link_label": "Hats",
-            "link": "#"
-          }
-        },
-        "163901124281258207-1": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "text": "",
-            "link_label": "Beanies",
-            "link": "#"
-          }
-        }
-      },
-      "block_order": [
-        "163901124281258207-0",
-        "163901124281258207-1"
-      ],
-      "settings": {
-        "title": "",
-        "image_width": "full",
-        "image_ratio": "portrait",
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "Explore All Our Products",
-        "button_link": "shopify:\/\/collections\/all",
-        "swipe_on_mobile": false
       }
     },
     "16390106514a983da9": {
@@ -293,13 +117,8 @@
   },
   "order": [
     "image_banner",
-    "rich_text",
     "featured_products",
     "1640118569574fd035",
-    "collage",
-    "video",
-    "multi_column",
-    "1639011242564d183f",
     "16390106514a983da9"
   ]
 }

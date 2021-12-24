@@ -27,7 +27,7 @@
             "disabled": true,
             "settings": {
               "text": "Welcome to our store",
-              "color_scheme": "background-1",
+              "color_scheme": "accent-2",
               "link": ""
             }
           }
@@ -106,7 +106,9 @@
           "footer-custom-0"
         ],
         "settings": {
-          "show_social": true
+          "show_social": true,
+          "has_section_edge": true,
+          "edge_color": "FFFFFF"
         }
       }
     },
