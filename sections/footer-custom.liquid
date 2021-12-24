@@ -1,10 +1,12 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 {{ 'section-footer-custom.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-list-social.css' | asset_url | stylesheet_tag }}</noscript>
 
 <footer class="footer footer-custom">
   <div class="footer__content-bottom">
     <div class="footer__content-bottom-wrapper page-width">
-      <div>
+      <div class="candy-spray-logo-footer">
         {% render 'logo-dark' %}
       </div>
       <div class="candy-spray-avatar-footer">
@@ -28,7 +30,7 @@
         {%- endfor -%}
 
         {%- if section.settings.show_social -%}
-          <ul class="footer__list-social list-unstyled list-social" role="list">
+          <ul class="list-unstyled list-social" role="list">
             {%- if settings.social_twitter_link != blank -%}
               <li class="list-social__item">
                 <a href="{{ settings.social_twitter_link }}" class="link list-social__link" >

@@ -1,21 +1,27 @@
 .footer-custom {
     background: white;
-    height: 280px;
     overflow: hidden;
 }
 .footer__content-bottom-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
+    justify-content: center;
     color: rgb(var(--color-base-background-1));
 }
+.candy-spray-logo-footer {
+    margin: 0 auto;
+}
 .candy-spray-avatar-footer {
-    text-align: center;
+    display: none;
 }
 .candy-spray-avatar-footer img {
     position: relative;
     top: 60px;
     width: 270px;
+}
+.footer__links {
+    display: none;
 }
 .footer__links li {
     list-style: none;
@@ -52,5 +58,45 @@
     text-decoration: none;
 }
 .text-right {
-    text-align: right;
+    text-align: center;
+}
+.list-social {
+    justify-content: center;
+}
+.list-social__link .icon path {
+    fill: rgb(var(--color-base-background-1));
+}
+.list-social__link:hover .icon path {
+    fill: rgb(var(--color-base-accent-1));
+}
+.list-social__link .icon {
+    width: 40px !important;
+    height: auto !important;
+    margin-left: 16px;
+}
+
+@media screen and (min-width: 1200px) {
+    .text-right {
+        text-align: right;
+    }
+    .footer-custom {
+        height: 280px;
+    }
+    .footer__content-bottom-wrapper {
+        grid-template-columns: 1fr 270px 1fr;
+    }
+    .candy-spray-logo-footer {
+        margin: unset;
+    }
+    .candy-spray-avatar-footer {
+        text-align: center;
+        display: block;
+    }
+    .list-social {
+        justify-content: flex-end;
+    }
+    .footer__links {
+        display: block;
+        margin: 0;
+    }
 }
