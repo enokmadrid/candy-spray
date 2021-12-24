@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     color: rgb(var(--color-base-background-1));
+    padding: 2rem;
 }
 .candy-spray-logo-footer {
     margin: 0 auto;
@@ -84,6 +85,7 @@
     }
     .footer__content-bottom-wrapper {
         grid-template-columns: 1fr 270px 1fr;
+        padding: 0 5rem !important;
     }
     .candy-spray-logo-footer {
         margin: unset;

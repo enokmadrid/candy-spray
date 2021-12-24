@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-list-social.css' | asset_url | stylesheet_tag }}</noscript>
 
+{% if section.settings.has_section_edge == true %} 
+    {% render 'section-edge' %}
+{% endif %}
 <footer class="footer footer-custom">
   <div class="footer__content-bottom">
     <div class="footer__content-bottom-wrapper page-width">
@@ -157,6 +160,25 @@
       "id": "show_social",
       "default": true,
       "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "Container Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "has_section_edge",
+      "label": "Add Section Edge",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "edge_color",
+      "label": "Edge Color",
+      "default": "FFFFFF",
+      "options": [
+        { "value": "FFFFFF", "label": "White" }
+      ]
     }
   ],
   "default": {
