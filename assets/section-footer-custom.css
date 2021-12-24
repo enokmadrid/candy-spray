@@ -25,6 +25,10 @@
     height: 100px;
     line-height: 100px;
 }
+.footer__links li a {
+    text-decoration: none;
+    color: rgb(var(--color-base-background-1));
+}
 .footer__links li:not(:last-child) {
     padding: 0 36px;
     border-right: 1px solid;
