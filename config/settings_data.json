@@ -98,7 +98,7 @@
             "type": "link_list",
             "settings": {
               "heading": "Quick links",
-              "menu": "main-menu"
+              "menu": "footer"
             }
           }
         },
