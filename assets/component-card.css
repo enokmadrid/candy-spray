@@ -372,7 +372,11 @@
 
 .card__inner {
   z-index: 1;
+  background-color: white;
+}
+#shopify-section-template--15503761277167__1640118569574fd035 .card__inner {
   background-color: black;
+  padding: 40px;
 }
 .card-information__text a {
   font-size: 34px;
