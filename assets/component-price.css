@@ -88,3 +88,33 @@
   text-transform: uppercase;
   color: rgba(var(--color-foreground), 0.7);
 }
+
+/* CUSTOM CSS */
+.ymq-options-img-input:not(:checked)+label {
+  content: "";
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  background-color: transparent !important;
+  background-origin: content-box !important;
+  background-repeat: no-repeat !important;
+  padding: 25px;
+  border-color: transparent;
+}
+.ymq-options-img-input:not(:checked)+label:hover {
+  border-color: rgb(var(--color-base-accent-1)) !important;
+}
+.ymq-options-img-input:checked+label {
+  content: "";
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  background-origin: content-box !important;
+  background-repeat: no-repeat !important;
+  padding: 25px;
+  border-color: rgb(var(--color-base-accent-1)) !important;
+  border-width: 3px;
+}
+.ymq-options-button-label {
+  border-radius: 8px !important;
+}
