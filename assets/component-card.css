@@ -350,27 +350,55 @@
   .collection .grid__item {
     padding-left: 2rem;
   }
-  .collection .card::after {
+  .collection .card-wrapper::before {
     content: "";
     width: 95%;
-    height: 82%;
+    height: 77%;
     display: inline-block;
     background-color: rgba(var(--color-base-accent-1));
     position: absolute;
-    transform: rotate(2deg);
-    top: 1.2rem;
-    left: -0.5rem;
+    transform: rotate(-2deg);
+    top: 1rem;
+    right: -0.5rem;
     transition: all 300ms ease-in-out;
   }
 }
 
-.collection .card:hover::after {
-  transform: rotate(-2deg);
-  height: 85%;
-  left: -0.7rem;
+.collection .card-wrapper:hover::before {
+  transform: rotate(2deg);
+  height: 78%;
+  right: -1rem;
 }
 
 .card__inner {
   z-index: 1;
   background-color: black;
+}
+.card-information__text a {
+  font-size: 34px;
+}
+.card-information__text {
+  background: url('https://cdn.shopify.com/s/files/1/0602/7984/9199/files/text-bg.svg?v=1640478357') left center no-repeat;
+  background-size: cover;
+  width: fit-content;
+  padding: 8px 50px 8px 16px;
+  transition: all 300ms ease-in-out;
+  position: relative;
+  left: 0;
+}
+
+.card-wrapper:hover .card-information__text {
+  padding: 12px 70px 12px 20px;
+  left: -8px;
+}
+
+.card-wrapper .card-information {
+  z-index: 1;
+  top: -45px;
+  left: -8px;
+  position: relative;
+}
+
+.card-wrapper:hover {
+  cursor: pointer;
 }
