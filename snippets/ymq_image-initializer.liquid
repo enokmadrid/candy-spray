@@ -19,7 +19,6 @@
 	<script>
       window.ymq_image = window.ymq_image || {};
       
-	
       ymq_image.shop = '{{ shop.permanent_domain }}';
 
       ymq_image.timestamp = '{{ ymq_timestamp }}'; 
@@ -28,13 +27,16 @@
 
       ymq_image.ymq_image_branding = {}; 
       {% if shop.metafields.ymq_image.branding %}  
-          ymq_image.ymq_image_branding = {{ shop.metafields.ymq_image.branding | json }}; 
+          ymq_image.ymq_image_branding = {{ shop.metafields.ymq_image.branding }}; 
       {% endif %} 
 
       ymq_image.product = {{ product | json }}; 
 
       ymq_image.imageParentDom = '';
       ymq_image.form_box = '';
+      setTimeout(() => {
+        if(document.getElementById('ymq_img_drag')){document.getElementById('ymq_img_drag').remove()}
+      }, 5000);
 	</script>
 	<script src="https://image.ymq.cool/shop/ymq_img.js"></script>
 	
