@@ -1,3 +1,4 @@
+{% if content_for_header contains "asyncLoad" and content_for_header contains "mw4M5Ya3iFNARE4t" %}
 {% assign checkout-button-protect = shop.metafields.ymq_option.branding.extra.checkout-button-protect | default: '1' %}
 {% if checkout-button-protect == '1' %}
 	<style id="ymq-checkout-button-protect">
@@ -71,21 +72,15 @@
 
 	ymq_option.ymq_option_branding = {}; 
 	{% if shop.metafields.ymq_option.branding %}  
-		ymq_option.ymq_option_branding = {{ shop.metafields.ymq_option.branding | json }}; 
+		ymq_option.ymq_option_branding = {{ shop.metafields.ymq_option.branding }}; 
 	{% endif %} 
-
-	ymq_option.ymq_option_settings = {}; 
-	{% if shop.metafields.ymq_option.settings %}  
-		ymq_option.ymq_option_settings = {{ shop.metafields.ymq_option.settings | json }}; 
-	{% endif %}
         
-    
     {% assign ymq_extra = '0,1,2,3,4,5,6,7,8,9' %}
     {% assign ymq_extra_array = ymq_extra | split: "," %}
     {% for key in ymq_extra_array %}
         {% assign ymq_extra_key = 'ymq_extra_' | append: key %}
         {% if shop.metafields.ymq_option[ymq_extra_key] %}
-        	ymq_option[`{{ymq_extra_key}}`] = {{ shop.metafields.ymq_option[ymq_extra_key] | json }}
+        	ymq_option[`{{ymq_extra_key}}`] = {{ shop.metafields.ymq_option[ymq_extra_key] }}
        	{% else %}
             {% break %}
         {% endif %}
@@ -101,45 +96,54 @@
 			ymq_option.ymq_has_only_default_variant = false; 
 		{% endunless %} 
 
-		ymq_option.ymq_status = {}; 
-		{% if product.metafields.ymq_option.ymq_status %} 
-			ymq_option.ymq_status = {{ product.metafields.ymq_option.ymq_status | json }}; 
-		{% endif %} 
+        {% if product.metafields.ymq_option.ymq_product_options %}
+            ymq_option.ymq_product_options = {{ product.metafields.ymq_option.ymq_product_options }};
+            ymq_option.ymq_status = ymq_option.ymq_product_options.ymq_status ? ymq_option.ymq_product_options.ymq_status : {};
+            ymq_option.ymq_variantjson = ymq_option.ymq_product_options.ymq_variantjson ? ymq_option.ymq_product_options.ymq_variantjson : {};
+            ymq_option.ymq_option_data = ymq_option.ymq_product_options.data ? ymq_option.ymq_product_options.data : {};
+            ymq_option.ymq_option_condition = ymq_option.ymq_product_options.condition ? ymq_option.ymq_product_options.condition : {};
+        {% else %}
+            ymq_option.ymq_status = {}; 
+            {% if product.metafields.ymq_option.ymq_status %} 
+                ymq_option.ymq_status = {{ product.metafields.ymq_option.ymq_status | json }}; 
+            {% endif %} 
 
-		ymq_option.ymq_variantjson = {}; 
-		{% if product.metafields.ymq_option.ymq_variantjson %} 
-			ymq_option.ymq_variantjson = {{ product.metafields.ymq_option.ymq_variantjson | json }}; 
-		{% endif %} 
+            ymq_option.ymq_variantjson = {}; 
+            {% if product.metafields.ymq_option.ymq_variantjson %} 
+                ymq_option.ymq_variantjson = {{ product.metafields.ymq_option.ymq_variantjson | json }}; 
+            {% endif %} 
 
+            ymq_option.ymq_option_data = {}; 
+            {% if product.metafields.ymq_option.data %} 
+                ymq_option.ymq_option_data = {{ product.metafields.ymq_option.data | json }}; 
+            {% endif %}
 
-		ymq_option.ymq_option_data = {}; 
-		{% if product.metafields.ymq_option.data %} 
-			ymq_option.ymq_option_data = {{ product.metafields.ymq_option.data | json }}; 
-		{% endif %}
+            ymq_option.ymq_option_condition = {}; 
+            {% if product.metafields.ymq_option.condition %} 
+                ymq_option.ymq_option_condition = {{ product.metafields.ymq_option.condition | json }}; 
+            {% endif %} 
+        {% endif %}
             
-        ymq_option.ymq_variant_condition = {}; 
-		{% if product.metafields.ymq_option.variant_condition %} 
-			ymq_option.ymq_variant_condition = {{ product.metafields.ymq_option.variant_condition | json }}; 
-		{% endif %}
 
-
-		ymq_option.ymq_option_condition = {}; 
-		{% if product.metafields.ymq_option.condition %} 
-			ymq_option.ymq_option_condition = {{ product.metafields.ymq_option.condition | json }}; 
-		{% endif %} 
-
-
+        ymq_option.ymq_template_options = {};
         ymq_option.ymq_option_template = {};
   		ymq_option.ymq_option_template_condition = {}; 
         {% assign ymq_template_to_product_value = product.metafields.ymq_option.ymq_template_to_product %}
         {% assign ymq_template_to_product_keys = ymq_template_to_product_value | split: "," %}
-        {% for key in ymq_template_to_product_keys %}    
-          {% assign ymq_template = 'ymq_template_' | append: key %} 
-          {% assign ymq_condition = 'ymq_condition_' | append: key %} 
-           {% if shop.metafields.ymq_option[ymq_template] %} 
-              ymq_option.ymq_option_template[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template] | json }}
-              ymq_option.ymq_option_template_condition[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_condition] | json }} 
-           {% endif %} 
+        {% for key in ymq_template_to_product_keys %}
+            {% assign ymq_template_options = 'ymq_template_options_' | append: key %}
+            {% if shop.metafields.ymq_option[ymq_template_options] %}
+                ymq_option.ymq_template_options[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template_options] }};
+                ymq_option.ymq_option_template[`tem{{key}}`] = ymq_option.ymq_template_options[`tem{{key}}`]['template'];
+                ymq_option.ymq_option_template_condition[`tem{{key}}`] = ymq_option.ymq_template_options[`tem{{key}}`]['condition'];
+            {% else %}
+                {% assign ymq_template = 'ymq_template_' | append: key %} 
+                {% assign ymq_condition = 'ymq_condition_' | append: key %} 
+                {% if shop.metafields.ymq_option[ymq_template] %} 
+                    ymq_option.ymq_option_template[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template] | json }}
+                    ymq_option.ymq_option_template_condition[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_condition] | json }} 
+                {% endif %} 
+            {% endif %}
         {% endfor %}
 
         {% if shop.metafields.ymq_option.ymq_option_template_sort %}
@@ -156,6 +160,42 @@
         
         ymq_option.ymq_option_template_c_t = {};
   		ymq_option.ymq_option_template_condition_c_t = {};
+        {% if shop.metafields.ymq_option.ymq_template_2_products %}
+            {% assign ymq_template_2_products = shop.metafields.ymq_option.ymq_template_2_products %}
+            {% if ymq_template_2_products != '' %}
+                {% assign ymq_template_2_products_array = ymq_template_2_products | split: "||||" %}
+                {% if ymq_template_2_products_array.size == 2 %}
+                    {% assign ymq_products_array = ymq_template_2_products_array[0] | split: "," %}
+                    {% assign ymq_templates_array = ymq_template_2_products_array[1] | split: "--" %}
+                    {% if ymq_products_array.size == ymq_templates_array.size %}
+                        {% for ymq_product_item in ymq_products_array %}
+                            {% assign ymq_index = forloop.index | minus: 1 %}
+                            {% assign ymq_product_item_id = ymq_product_item | plus: 0 %}
+                            {% if product.id == ymq_product_item_id %}
+                                {% assign ymq_templates_ids_string = ymq_templates_array[ymq_index] %}
+                                {% assign ymq_templates_ids_array = ymq_templates_ids_string | split: "," %}
+                                {% for key in ymq_templates_ids_array %}
+                                    {% assign ymq_template_options = 'ymq_template_options_' | append: key %}
+                                    {% if shop.metafields.ymq_option[ymq_template_options] %}
+                                        ymq_option.ymq_template_options[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template_options] }};
+                                        ymq_option.ymq_option_template_c_t[`tem{{key}}`] = ymq_option.ymq_template_options[`tem{{key}}`]['template'];
+                                        ymq_option.ymq_option_template_condition_c_t[`tem{{key}}`] = ymq_option.ymq_template_options[`tem{{key}}`]['condition'];
+                                    {% else %}
+                                        {% assign ymq_template = 'ymq_template_' | append: key %} 
+                                        {% assign ymq_condition = 'ymq_condition_' | append: key %} 
+                                        {% if shop.metafields.ymq_option[ymq_template] %} 
+                                            ymq_option.ymq_option_template_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template] | json }}
+                                            ymq_option.ymq_option_template_condition_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_condition] | json }} 
+                                        {% endif %} 
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
         {% if shop.metafields.ymq_option.ymq_template_2_collections %}
             {% assign ymq_template_2_collections = shop.metafields.ymq_option.ymq_template_2_collections %}
             {% if ymq_template_2_collections != '' %}
@@ -171,13 +211,20 @@
                                 {% if ymq_collection_item == ymq_product_collection_id %}
                                     {% assign ymq_templates_ids_string = ymq_templates_array[ymq_index] %}
                                     {% assign ymq_templates_ids_array = ymq_templates_ids_string | split: "," %}
-                                    {% for key in ymq_templates_ids_array %}    
-                                    {% assign ymq_template = 'ymq_template_' | append: key %} 
-                                    {% assign ymq_condition = 'ymq_condition_' | append: key %} 
-                                    {% if shop.metafields.ymq_option[ymq_template] %} 
-                                        ymq_option.ymq_option_template_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template] | json }}
-                                        ymq_option.ymq_option_template_condition_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_condition] | json }} 
-                                    {% endif %} 
+                                    {% for key in ymq_templates_ids_array %}
+                                        {% assign ymq_template_options = 'ymq_template_options_' | append: key %}
+                                        {% if shop.metafields.ymq_option[ymq_template_options] %}
+                                            ymq_option.ymq_template_options[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template_options] }};
+                                            ymq_option.ymq_option_template_c_t[`tem{{key}}`] = ymq_option.ymq_template_options[`tem{{key}}`]['template'];
+                                            ymq_option.ymq_option_template_condition_c_t[`tem{{key}}`] = ymq_option.ymq_template_options[`tem{{key}}`]['condition'];
+                                        {% else %}
+                                            {% assign ymq_template = 'ymq_template_' | append: key %} 
+                                            {% assign ymq_condition = 'ymq_condition_' | append: key %} 
+                                            {% if shop.metafields.ymq_option[ymq_template] %} 
+                                                ymq_option.ymq_option_template_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template] | json }}
+                                                ymq_option.ymq_option_template_condition_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_condition] | json }} 
+                                            {% endif %} 
+                                        {% endif %}  
                                     {% endfor %}
                                     {% break %}
                                 {% endif %}
@@ -199,21 +246,26 @@
                     {% if ymq_tags_array.size == ymq_templates_array.size %}
                         {% for ymq_tag_item in ymq_tags_array %}
                             {% assign ymq_index = forloop.index | minus: 1 %}
-                            {% for ymq_product_tag in product.tags %}
-                                {% if ymq_tag_item == ymq_product_tag %}
-                                    {% assign ymq_templates_ids_string = ymq_templates_array[ymq_index] %}
-                                    {% assign ymq_templates_ids_array = ymq_templates_ids_string | split: "," %}
-                                    {% for key in ymq_templates_ids_array %}    
-                                    {% assign ymq_template = 'ymq_template_' | append: key %} 
-                                    {% assign ymq_condition = 'ymq_condition_' | append: key %} 
-                                    {% if shop.metafields.ymq_option[ymq_template] %} 
-                                        ymq_option.ymq_option_template_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template] | json }}
-                                        ymq_option.ymq_option_template_condition_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_condition] | json }} 
-                                    {% endif %} 
-                                    {% endfor %}
-                                    {% break %}
-                                {% endif %}
-                            {% endfor %}
+                            {% assign ymq_tag_item_string = ymq_tag_item | append: "" %}
+                            {% if product.tags contains ymq_tag_item_string %}
+                                {% assign ymq_templates_ids_string = ymq_templates_array[ymq_index] %}
+                                {% assign ymq_templates_ids_array = ymq_templates_ids_string | split: "," %}
+                                {% for key in ymq_templates_ids_array %}
+                                    {% assign ymq_template_options = 'ymq_template_options_' | append: key %}
+                                    {% if shop.metafields.ymq_option[ymq_template_options] %}
+                                        ymq_option.ymq_template_options[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template_options] }};
+                                        ymq_option.ymq_option_template_c_t[`tem{{key}}`] = ymq_option.ymq_template_options[`tem{{key}}`]['template'];
+                                        ymq_option.ymq_option_template_condition_c_t[`tem{{key}}`] = ymq_option.ymq_template_options[`tem{{key}}`]['condition'];
+                                    {% else %}
+                                        {% assign ymq_template = 'ymq_template_' | append: key %} 
+                                        {% assign ymq_condition = 'ymq_condition_' | append: key %} 
+                                        {% if shop.metafields.ymq_option[ymq_template] %} 
+                                            ymq_option.ymq_option_template_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_template] | json }}
+                                            ymq_option.ymq_option_template_condition_c_t[`tem{{key}}`] = {{ shop.metafields.ymq_option[ymq_condition] | json }} 
+                                        {% endif %} 
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                         {% endfor %}
                     {% endif %}
                 {% endif %}
@@ -221,5 +273,5 @@
         {% endif %}                                       
 	{% endif %}
 </script> 
-
 <script src='https://option.ymq.cool/option/ymq-option.js'></script>
+{% endif %}
